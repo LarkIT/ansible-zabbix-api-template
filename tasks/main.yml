@@ -1,0 +1,26 @@
+# roles/zabbix-api-template/tasks/main.yml
+# Create Zabbix template
+---
+- name: Create Zabbix template
+  zabbix_template:
+    server_url: "{{ zabbix_server_url }}"
+    login_user: "{{ zabbix_login_user }}"
+    login_password: "{{ zabbix_login_password }}"
+    state: "{{ zabbix_template_state }}"
+    template_json: "{{ lookup('template', '{{zabbix_template_template}}') }}"
+  when: zabbix_template_state == "present"
+
+- name: Dump Zabbix template to file
+  block: 
+  - name: Get Zabbix template
+    zabbix_template:
+      server_url: "{{ zabbix_server_url }}"
+      login_user: "{{ zabbix_login_user }}"
+      login_password: "{{ zabbix_login_password }}"
+      template_name: "{{ zabbix_template_name }}"
+      state: "{{ zabbix_template_state }}"
+    register: template_dump
+    
+  - name: Write template to file
+    copy: content="{{ template_dump|to_nice_json }}" dest=./{{zabbix_template_name}}.json
+  when: zabbix_template_state == "dump"

@@ -1,0 +1,246 @@
+{% raw -%}
+{
+  "zabbix_export": {
+    "date": "2020-01-20T22:16:06Z",
+    "groups": [
+      {
+        "name": "Templates/Applications"
+      }
+    ],
+    "templates": [
+      {
+        "applications": [
+          {
+            "name": "HTTP Health Check"
+          },
+          {
+            "name": "SSL Certificate"
+          }
+        ],
+{% endraw %}
+        "description": "{{ zabbix_template_name }}",
+{% raw -%}
+        "discovery_rules": [],
+        "groups": [
+          {
+            "name": "Templates/Applications"
+          }
+        ],
+        "httptests": [
+          {
+            "agent": "Zabbix",
+            "application": {
+              "name": "HTTP Health Check"
+            },
+            "attempts": "1",
+            "authentication": "0",
+            "delay": "1",
+            "headers": [],
+            "http_password": "",
+            "http_proxy": "",
+            "http_user": "",
+            "name": "HTTP Health Check",
+            "ssl_cert_file": "",
+            "ssl_key_file": "",
+            "ssl_key_password": "",
+            "status": "0",
+            "steps": [
+              {
+                "follow_redirects": "0",
+                "headers": [],
+                "name": "HTTP Health Check",
+                "posts": [],
+                "query_fields": [],
+                "required": "",
+                "retrieve_mode": "0",
+                "status_codes": "",
+                "timeout": "15s",
+{% endraw %}
+                "url": "https://{{'{'}}HOST.DNS{{'}'}}:{{ zabbix_template_webapp_port }}",
+{% raw -%}
+                "variables": []
+              }
+            ],
+            "variables": [],
+            "verify_host": "0",
+            "verify_peer": "0"
+          }
+        ],
+        "items": [
+          {
+            "allow_traps": "0",
+            "allowed_hosts": "",
+            "applications": [
+              {
+                "name": "SSL Certificate"
+              }
+            ],
+            "authtype": "0",
+            "delay": "1m",
+            "description": "",
+            "follow_redirects": "1",
+            "headers": [],
+            "history": "90d",
+            "http_proxy": "",
+            "inventory_link": "0",
+            "ipmi_sensor": "",
+            "jmx_endpoint": "",
+{% endraw %}            
+            "key": "ssl_cert_check.sh[\"domain\",\"{{'{'}}HOST.DNS{{'}'}}\",\"{{ zabbix_template_webapp_port }}\"]",
+{% raw -%}
+            "logtimefmt": "",
+            "master_item": [],
+            "name": "SSL Certificate Domain Name",
+            "output_format": "0",
+            "params": "",
+            "password": "",
+            "port": "",
+            "post_type": "0",
+            "posts": "",
+            "preprocessing": [],
+            "privatekey": "",
+            "publickey": "",
+            "query_fields": [],
+            "request_method": "0",
+            "retrieve_mode": "0",
+            "snmp_community": "",
+            "snmp_oid": "",
+            "snmpv3_authpassphrase": "",
+            "snmpv3_authprotocol": "0",
+            "snmpv3_contextname": "",
+            "snmpv3_privpassphrase": "",
+            "snmpv3_privprotocol": "0",
+            "snmpv3_securitylevel": "0",
+            "snmpv3_securityname": "",
+            "ssl_cert_file": "",
+            "ssl_key_file": "",
+            "ssl_key_password": "",
+            "status": "0",
+            "status_codes": "200",
+            "timeout": "3s",
+            "trends": "0",
+            "type": "10",
+            "units": "",
+            "url": "",
+            "username": "",
+            "value_type": "4",
+            "valuemap": [],
+            "verify_host": "0",
+            "verify_peer": "0"
+          },
+          {
+            "allow_traps": "0",
+            "allowed_hosts": "",
+            "applications": [
+              {
+                "name": "SSL Certificate"
+              }
+            ],
+            "authtype": "0",
+            "delay": "1m",
+            "description": "",
+            "follow_redirects": "1",
+            "headers": [],
+            "history": "90d",
+            "http_proxy": "",
+            "inventory_link": "0",
+            "ipmi_sensor": "",
+            "jmx_endpoint": "",
+{% endraw %}
+            "key": "ssl_cert_check.sh[\"expire\",\"{{'{'}}HOST.DNS{{'}'}}\",\"{{ zabbix_template_webapp_port }}\"]",
+{% raw -%}
+            "logtimefmt": "",
+            "master_item": [],
+            "name": "SSL Certificate Expiration Days",
+            "output_format": "0",
+            "params": "",
+            "password": "",
+            "port": "",
+            "post_type": "0",
+            "posts": "",
+            "preprocessing": [],
+            "privatekey": "",
+            "publickey": "",
+            "query_fields": [],
+            "request_method": "0",
+            "retrieve_mode": "0",
+            "snmp_community": "",
+            "snmp_oid": "",
+            "snmpv3_authpassphrase": "",
+            "snmpv3_authprotocol": "0",
+            "snmpv3_contextname": "",
+            "snmpv3_privpassphrase": "",
+            "snmpv3_privprotocol": "0",
+            "snmpv3_securitylevel": "0",
+            "snmpv3_securityname": "",
+            "ssl_cert_file": "",
+            "ssl_key_file": "",
+            "ssl_key_password": "",
+            "status": "0",
+            "status_codes": "200",
+            "timeout": "3s",
+            "trends": "365d",
+            "type": "10",
+            "units": "",
+            "url": "",
+            "username": "",
+            "value_type": "3",
+            "valuemap": [],
+            "verify_host": "0",
+            "verify_peer": "0"
+          }
+        ],
+        "macros": [],
+{% endraw %}
+        "name": "{{ zabbix_template_name }}",
+{% raw -%}
+        "screens": [],
+        "tags": [],
+{% endraw %}
+        "template": "{{ zabbix_template_name }}",
+{% raw -%}
+        "templates": []
+      }
+    ],
+    "triggers": [
+      {
+        "correlation_mode": "0",
+        "correlation_tag": "",
+        "dependencies": [],
+        "description": "",
+{% endraw %}
+        "expression": "{{'{'}}{{ zabbix_template_name }}:ssl_cert_check.sh[\"expire\",\"{HOST.DNS}\",\"{{ zabbix_template_webapp_port }}\"].last(){{'}'}}<=15 or {{'{'}}{{ zabbix_template_name }}:ssl_cert_check.sh[\"domain\",\"{HOST.DNS}\",\"{{ zabbix_template_webapp_port }}\"].str(null){{'}'}}=1",
+{% raw -%}
+        "manual_close": "0",
+        "name": "SSL Certificate (CN={ITEM.LASTVALUE2}) on {HOST.NAME} expires in 15 days",
+        "priority": "2",
+        "recovery_expression": "",
+        "recovery_mode": "0",
+        "status": "0",
+        "tags": [],
+        "type": "0",
+        "url": ""
+      },
+      {
+        "correlation_mode": "0",
+        "correlation_tag": "",
+        "dependencies": [],
+        "description": "",
+{% endraw %}
+        "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>200 and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>301",
+{% raw -%}
+        "manual_close": "0",
+        "name": "{HOST.NAME} HTTP response is {ITEM.LASTVALUE}",
+        "priority": "4",
+        "recovery_expression": "",
+        "recovery_mode": "0",
+        "status": "0",
+        "tags": [],
+        "type": "0",
+        "url": ""
+      }
+    ],
+    "version": "4.2"
+  }
+}
+{% endraw %}

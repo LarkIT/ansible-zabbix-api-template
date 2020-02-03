@@ -1,0 +1,288 @@
+{% raw -%}
+{
+    "zabbix_export": {
+        "version": "4.2",
+        "date": "2019-12-06T22:32:04Z",
+        "groups": [
+            {
+                "name": "Templates/Modules"
+            }
+        ],
+        "templates": [
+            {
+{% endraw %}
+                "template": "{{ zabbix_template_name }}",
+                "name": "{{ zabbix_template_name }}",
+{% raw -%}
+                "description": "",
+                "groups": [
+                    {
+                        "name": "Templates/Modules"
+                    }
+                ],
+                "applications": [
+                    {
+                        "name": "Zabbix agent"
+                    }
+                ],
+                "items": [
+                    {
+                        "name": "Host name of Zabbix agent running",
+                        "type": "0",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "key": "agent.hostname",
+                        "delay": "1h",
+                        "history": "1w",
+                        "trends": "0",
+                        "status": "0",
+                        "value_type": "1",
+                        "allowed_hosts": "",
+                        "units": "",
+                        "snmpv3_contextname": "",
+                        "snmpv3_securityname": "",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_privpassphrase": "",
+                        "params": "",
+                        "ipmi_sensor": "",
+                        "authtype": "0",
+                        "username": "",
+                        "password": "",
+                        "publickey": "",
+                        "privatekey": "",
+                        "port": "",
+                        "description": "",
+                        "inventory_link": "0",
+                        "applications": [
+                            {
+                                "name": "Zabbix agent"
+                            }
+                        ],
+                        "valuemap": [],
+                        "logtimefmt": "",
+                        "preprocessing": [],
+                        "jmx_endpoint": "",
+                        "timeout": "3s",
+                        "url": "",
+                        "query_fields": [],
+                        "posts": "",
+                        "status_codes": "200",
+                        "follow_redirects": "1",
+                        "post_type": "0",
+                        "http_proxy": "",
+                        "headers": [],
+                        "retrieve_mode": "0",
+                        "request_method": "0",
+                        "output_format": "0",
+                        "allow_traps": "0",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "verify_peer": "0",
+                        "verify_host": "0",
+                        "master_item": []
+                    },
+                    {
+                        "name": "Zabbix agent ping",
+                        "type": "0",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "key": "agent.ping",
+                        "delay": "1m",
+                        "history": "1w",
+                        "trends": "365d",
+                        "status": "0",
+                        "value_type": "3",
+                        "allowed_hosts": "",
+                        "units": "",
+                        "snmpv3_contextname": "",
+                        "snmpv3_securityname": "",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_privpassphrase": "",
+                        "params": "",
+                        "ipmi_sensor": "",
+                        "authtype": "0",
+                        "username": "",
+                        "password": "",
+                        "publickey": "",
+                        "privatekey": "",
+                        "port": "",
+                        "description": "The agent always returns 1 for this item. It could be used in combination with nodata() for availability check.",
+                        "inventory_link": "0",
+                        "applications": [
+                            {
+                                "name": "Zabbix agent"
+                            }
+                        ],
+                        "valuemap": {
+                            "name": "Zabbix agent ping status"
+                        },
+                        "logtimefmt": "",
+                        "preprocessing": [],
+                        "jmx_endpoint": "",
+                        "timeout": "3s",
+                        "url": "",
+                        "query_fields": [],
+                        "posts": "",
+                        "status_codes": "200",
+                        "follow_redirects": "1",
+                        "post_type": "0",
+                        "http_proxy": "",
+                        "headers": [],
+                        "retrieve_mode": "0",
+                        "request_method": "0",
+                        "output_format": "0",
+                        "allow_traps": "0",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "verify_peer": "0",
+                        "verify_host": "0",
+                        "master_item": []
+                    },
+                    {
+                        "name": "Version of Zabbix agent running",
+                        "type": "0",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "key": "agent.version",
+                        "delay": "1h",
+                        "history": "1w",
+                        "trends": "0",
+                        "status": "0",
+                        "value_type": "1",
+                        "allowed_hosts": "",
+                        "units": "",
+                        "snmpv3_contextname": "",
+                        "snmpv3_securityname": "",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_privpassphrase": "",
+                        "params": "",
+                        "ipmi_sensor": "",
+                        "authtype": "0",
+                        "username": "",
+                        "password": "",
+                        "publickey": "",
+                        "privatekey": "",
+                        "port": "",
+                        "description": "",
+                        "inventory_link": "0",
+                        "applications": [
+                            {
+                                "name": "Zabbix agent"
+                            }
+                        ],
+                        "valuemap": [],
+                        "logtimefmt": "",
+                        "preprocessing": [],
+                        "jmx_endpoint": "",
+                        "timeout": "3s",
+                        "url": "",
+                        "query_fields": [],
+                        "posts": "",
+                        "status_codes": "200",
+                        "follow_redirects": "1",
+                        "post_type": "0",
+                        "http_proxy": "",
+                        "headers": [],
+                        "retrieve_mode": "0",
+                        "request_method": "0",
+                        "output_format": "0",
+                        "allow_traps": "0",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "verify_peer": "0",
+                        "verify_host": "0",
+                        "master_item": []
+                    }
+                ],
+                "discovery_rules": [],
+                "httptests": [],
+                "macros": [],
+                "templates": [],
+                "screens": [],
+                "tags": []
+            }
+        ],
+        "triggers": [
+            {
+{% endraw %}
+                "expression": "{{'{'}}{{ zabbix_template_name }}:agent.hostname.diff(0){{'}'}}>0",
+{% raw -%}
+                "recovery_mode": "0",
+                "recovery_expression": "",
+                "name": "Host name of Zabbix agent was changed on {HOST.NAME}",
+                "correlation_mode": "0",
+                "correlation_tag": "",
+                "url": "",
+                "status": "0",
+                "priority": "1",
+                "description": "",
+                "type": "0",
+                "manual_close": "0",
+                "dependencies": [],
+                "tags": []
+            },
+            {
+{% endraw %} 
+                "expression": "{{'{'}}{{ zabbix_template_name }}:agent.version.diff(0){{'}'}}>0",
+{% raw -%}
+                "recovery_mode": "0",
+                "recovery_expression": "",
+                "name": "Version of Zabbix agent was changed on {HOST.NAME}",
+                "correlation_mode": "0",
+                "correlation_tag": "",
+                "url": "",
+                "status": "0",
+                "priority": "1",
+                "description": "",
+                "type": "0",
+                "manual_close": "0",
+                "dependencies": [],
+                "tags": []
+            },
+            {
+{% endraw %}
+                "expression": "{{'{'}}{{ zabbix_template_name }}:agent.ping.nodata(5m){{'}'}}=1",
+{% raw -%}
+                "recovery_mode": "0",
+                "recovery_expression": "",
+                "name": "Zabbix agent on {HOST.NAME} is unreachable for 5 minutes",
+                "correlation_mode": "0",
+                "correlation_tag": "",
+                "url": "",
+                "status": "0",
+                "priority": "4",
+                "description": "",
+                "type": "0",
+                "manual_close": "0",
+{% endraw %}
+                "dependencies": {{ zabbix_template_trigger_dependencies }},
+{% raw -%}
+                "tags": []
+            }
+        ],
+        "value_maps": [
+            {
+                "name": "Zabbix agent ping status",
+                "mappings": [
+                    {
+                        "value": "1",
+                        "newvalue": "Up"
+                    }
+                ]
+            }
+        ]
+    }
+}
+{% endraw %}

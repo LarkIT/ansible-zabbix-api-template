@@ -1,0 +1,6 @@
+# defaults/main.yml
+# Default params for role
+---
+zabbix_template_state: present
+zabbix_template_trigger_dependencies: []
+zabbix_template_webapp_port: 443

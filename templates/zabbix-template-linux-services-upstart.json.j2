@@ -1,0 +1,182 @@
+{% raw -%}
+{
+    "zabbix_export": {
+        "version": "4.2",
+        "date": "2019-12-09T19:33:34Z",
+        "groups": [
+            {
+                "name": "Templates/Applications"
+            }
+        ],
+        "templates": [
+            {
+{% endraw %}
+                "template": "{{ zabbix_template_name }}",
+                "name": "{{ zabbix_template_name }}",
+                "description": "{{ zabbix_template_name }}",
+{% raw -%}
+                "groups": [
+                    {
+                        "name": "Templates/Applications"
+                    }
+                ],
+                "applications": [
+                    {
+                        "name": "Services"
+                    }
+                ],
+                "items": [],
+                "discovery_rules": [
+                    {
+                        "name": "Service Discovery",
+                        "type": "0",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "key": "upstart.service.discovery",
+                        "delay": "1h",
+                        "status": "0",
+                        "allowed_hosts": "",
+                        "snmpv3_contextname": "",
+                        "snmpv3_securityname": "",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_privpassphrase": "",
+                        "params": "",
+                        "ipmi_sensor": "",
+                        "authtype": "0",
+                        "username": "",
+                        "password": "",
+                        "publickey": "",
+                        "privatekey": "",
+                        "port": "",
+                        "filter": {
+                            "evaltype": "0",
+                            "formula": "",
+                            "conditions": [
+                                {
+                                    "macro": "{#SERVICE}",
+                                    "value": "(httpd|jenkins|^ntpd$|postfix|sshd|sql|squid|xinetd)",
+                                    "operator": "8",
+                                    "formulaid": "A"
+                                }
+                            ]
+                        },
+                        "lifetime": "1d",
+                        "description": "",
+                        "item_prototypes": [
+                            {
+                                "name": "{#SERVICE} Status",
+                                "type": "0",
+                                "snmp_community": "",
+                                "snmp_oid": "",
+                                "key": "upstart.service.status[{#SERVICE}]",
+                                "delay": "5m",
+                                "history": "1d",
+                                "trends": "1d",
+                                "status": "0",
+                                "value_type": "3",
+                                "allowed_hosts": "",
+                                "units": "",
+                                "snmpv3_contextname": "",
+                                "snmpv3_securityname": "",
+                                "snmpv3_securitylevel": "0",
+                                "snmpv3_authprotocol": "0",
+                                "snmpv3_authpassphrase": "",
+                                "snmpv3_privprotocol": "0",
+                                "snmpv3_privpassphrase": "",
+                                "params": "",
+                                "ipmi_sensor": "",
+                                "authtype": "0",
+                                "username": "",
+                                "password": "",
+                                "publickey": "",
+                                "privatekey": "",
+                                "port": "",
+                                "description": "Returns the status of the",
+                                "inventory_link": "0",
+                                "applications": [
+                                    {
+                                        "name": "Services"
+                                    }
+                                ],
+                                "valuemap": [],
+                                "logtimefmt": "",
+                                "preprocessing": [],
+                                "jmx_endpoint": "",
+                                "timeout": "3s",
+                                "url": "",
+                                "query_fields": [],
+                                "posts": "",
+                                "status_codes": "200",
+                                "follow_redirects": "1",
+                                "post_type": "0",
+                                "http_proxy": "",
+                                "headers": [],
+                                "retrieve_mode": "0",
+                                "request_method": "0",
+                                "output_format": "0",
+                                "allow_traps": "0",
+                                "ssl_cert_file": "",
+                                "ssl_key_file": "",
+                                "ssl_key_password": "",
+                                "verify_peer": "0",
+                                "verify_host": "0",
+                                "application_prototypes": [],
+                                "master_item": []
+                            }
+                        ],
+                        "trigger_prototypes": [
+                            {
+                                "expression": "{Template Linux Services Upstart:upstart.service.status[{#SERVICE}].last()}<>0",
+                                "recovery_mode": "0",
+                                "recovery_expression": "",
+                                "name": "{#SERVICE} service not running",
+                                "correlation_mode": "0",
+                                "correlation_tag": "",
+                                "url": "",
+                                "status": "0",
+                                "priority": "4",
+                                "description": "",
+                                "type": "0",
+                                "manual_close": "1",
+                                "dependencies": [],
+                                "tags": []
+                            }
+                        ],
+                        "graph_prototypes": [],
+                        "host_prototypes": [],
+                        "jmx_endpoint": "",
+                        "timeout": "3s",
+                        "url": "",
+                        "query_fields": [],
+                        "posts": "",
+                        "status_codes": "200",
+                        "follow_redirects": "1",
+                        "post_type": "0",
+                        "http_proxy": "",
+                        "headers": [],
+                        "retrieve_mode": "0",
+                        "request_method": "0",
+                        "allow_traps": "0",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "verify_peer": "0",
+                        "verify_host": "0",
+                        "lld_macro_paths": [],
+                        "preprocessing": [],
+                        "master_item": []
+                    }
+                ],
+                "httptests": [],
+                "macros": [],
+                "templates": [],
+                "screens": [],
+                "tags": []
+            }
+        ]
+    }
+}
+{% endraw %}

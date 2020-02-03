@@ -1,0 +1,123 @@
+{% raw -%}
+{
+    "zabbix_export": {
+        "version": "4.2",
+        "date": "2019-12-06T19:15:26Z",
+        "groups": [
+            {
+                "name": "Templates/Modules"
+            }
+        ],
+        "templates": [
+            {
+{% endraw %}
+                "template": "{{ zabbix_template_name }}",
+                "name": "{{ zabbix_template_name }}",
+                "description": "{{ zabbix_template_name }}",
+{% raw -%}
+                "groups": [
+                    {
+                        "name": "Templates/Modules"
+                    }
+                ],
+                "applications": [
+                    {
+                        "name": "Hardware"
+                    }
+                ],
+                "items": [
+                    {
+                        "name": "ESXi Hardware Check",
+                        "type": "10",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "key": "check_esxi_hardware.py[\"-H\",\"{HOST.CONN}\",\"-U\",\"nagios\",\"-P\",\"{$ESXI_PASSWORD}\"]",
+                        "delay": "1h",
+                        "history": "1w",
+                        "trends": "365d",
+                        "status": "0",
+                        "value_type": "1",
+                        "allowed_hosts": "",
+                        "units": "",
+                        "snmpv3_contextname": "",
+                        "snmpv3_securityname": "",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_privpassphrase": "",
+                        "params": "",
+                        "ipmi_sensor": "",
+                        "authtype": "0",
+                        "username": "",
+                        "password": "",
+                        "publickey": "",
+                        "privatekey": "",
+                        "port": "",
+                        "description": "",
+                        "inventory_link": "0",
+                        "applications": [
+                            {
+                                "name": "Hardware"
+                            }
+                        ],
+                        "valuemap": [],
+                        "logtimefmt": "",
+                        "preprocessing": [],
+                        "jmx_endpoint": "",
+                        "timeout": "3s",
+                        "url": "",
+                        "query_fields": [],
+                        "posts": "",
+                        "status_codes": "200",
+                        "follow_redirects": "1",
+                        "post_type": "0",
+                        "http_proxy": "",
+                        "headers": [],
+                        "retrieve_mode": "0",
+                        "request_method": "0",
+                        "output_format": "0",
+                        "allow_traps": "0",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "verify_peer": "0",
+                        "verify_host": "0",
+                        "master_item": []
+                    }
+                ],
+                "discovery_rules": [],
+                "httptests": [],
+                "macros": [],
+                "templates": [],
+                "screens": [],
+                "tags": []
+            }
+        ],
+        "triggers": [
+            {
+{% endraw %}
+                "expression": "{{'{'}}{{ zabbix_template_name }}:check_esxi_hardware.py[\"-H\",\"{HOST.CONN}\",\"-U\",\"nagios\",\"-P\",\"{$ESXI_PASSWORD}\"].regexp(OK){{'}'}}=0",
+{% raw -%}
+                "recovery_mode": "0",
+                "recovery_expression": "",
+                "name": "Hardware problem on {HOST.NAME}",
+                "correlation_mode": "0",
+                "correlation_tag": "",
+                "url": "",
+                "status": "0",
+                "priority": "4",
+                "description": "{ITEM.LASTVALUE1}",
+                "type": "0",
+                "manual_close": "0",
+{% endraw %}
+                "dependencies": {{ zabbix_template_trigger_dependencies }},
+{% raw -%}
+                "tags": []
+            }
+            
+        ],
+        "value_maps": []
+    }
+}
+{% endraw %}

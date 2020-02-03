@@ -1,0 +1,324 @@
+{% raw -%}
+{
+    "zabbix_export": {
+        "version": "4.2",
+        "date": "2019-12-06T19:15:26Z",
+        "groups": [
+            {
+                "name": "Templates/Modules"
+            }
+        ],
+        "templates": [
+            {
+{% endraw %}
+                "template": "{{ zabbix_template_name }}",
+                "name": "{{ zabbix_template_name }}",
+                "description": "{{ zabbix_template_name }} version: 0.15",
+{% raw -%}
+                "groups": [
+                    {
+                        "name": "Templates/Modules"
+                    }
+                ],
+                "applications": [
+                    {
+                        "name": "Status"
+                    }
+                ],
+                "items": [
+                    {
+                        "name": "ICMP ping",
+                        "type": "3",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "key": "icmpping",
+                        "delay": "1m",
+                        "history": "1w",
+                        "trends": "365d",
+                        "status": "0",
+                        "value_type": "3",
+                        "allowed_hosts": "",
+                        "units": "",
+                        "snmpv3_contextname": "",
+                        "snmpv3_securityname": "",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_privpassphrase": "",
+                        "params": "",
+                        "ipmi_sensor": "",
+                        "authtype": "0",
+                        "username": "",
+                        "password": "",
+                        "publickey": "",
+                        "privatekey": "",
+                        "port": "",
+                        "description": "",
+                        "inventory_link": "0",
+                        "applications": [
+                            {
+                                "name": "Status"
+                            }
+                        ],
+                        "valuemap": {
+                            "name": "Service state"
+                        },
+                        "logtimefmt": "",
+                        "preprocessing": [],
+                        "jmx_endpoint": "",
+                        "timeout": "3s",
+                        "url": "",
+                        "query_fields": [],
+                        "posts": "",
+                        "status_codes": "200",
+                        "follow_redirects": "1",
+                        "post_type": "0",
+                        "http_proxy": "",
+                        "headers": [],
+                        "retrieve_mode": "0",
+                        "request_method": "0",
+                        "output_format": "0",
+                        "allow_traps": "0",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "verify_peer": "0",
+                        "verify_host": "0",
+                        "master_item": []
+                    },
+                    {
+                        "name": "ICMP loss",
+                        "type": "3",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "key": "icmppingloss",
+                        "delay": "1m",
+                        "history": "1w",
+                        "trends": "365d",
+                        "status": "0",
+                        "value_type": "0",
+                        "allowed_hosts": "",
+                        "units": "%",
+                        "snmpv3_contextname": "",
+                        "snmpv3_securityname": "",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_privpassphrase": "",
+                        "params": "",
+                        "ipmi_sensor": "",
+                        "authtype": "0",
+                        "username": "",
+                        "password": "",
+                        "publickey": "",
+                        "privatekey": "",
+                        "port": "",
+                        "description": "",
+                        "inventory_link": "0",
+                        "applications": [
+                            {
+                                "name": "Status"
+                            }
+                        ],
+                        "valuemap": [],
+                        "logtimefmt": "",
+                        "preprocessing": [],
+                        "jmx_endpoint": "",
+                        "timeout": "3s",
+                        "url": "",
+                        "query_fields": [],
+                        "posts": "",
+                        "status_codes": "200",
+                        "follow_redirects": "1",
+                        "post_type": "0",
+                        "http_proxy": "",
+                        "headers": [],
+                        "retrieve_mode": "0",
+                        "request_method": "0",
+                        "output_format": "0",
+                        "allow_traps": "0",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "verify_peer": "0",
+                        "verify_host": "0",
+                        "master_item": []
+                    },
+                    {
+                        "name": "ICMP response time",
+                        "type": "3",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "key": "icmppingsec",
+                        "delay": "1m",
+                        "history": "1w",
+                        "trends": "365d",
+                        "status": "0",
+                        "value_type": "0",
+                        "allowed_hosts": "",
+                        "units": "s",
+                        "snmpv3_contextname": "",
+                        "snmpv3_securityname": "",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_privpassphrase": "",
+                        "params": "",
+                        "ipmi_sensor": "",
+                        "authtype": "0",
+                        "username": "",
+                        "password": "",
+                        "publickey": "",
+                        "privatekey": "",
+                        "port": "",
+                        "description": "",
+                        "inventory_link": "0",
+                        "applications": [
+                            {
+                                "name": "Status"
+                            }
+                        ],
+                        "valuemap": [],
+                        "logtimefmt": "",
+                        "preprocessing": [],
+                        "jmx_endpoint": "",
+                        "timeout": "3s",
+                        "url": "",
+                        "query_fields": [],
+                        "posts": "",
+                        "status_codes": "200",
+                        "follow_redirects": "1",
+                        "post_type": "0",
+                        "http_proxy": "",
+                        "headers": [],
+                        "retrieve_mode": "0",
+                        "request_method": "0",
+                        "output_format": "0",
+                        "allow_traps": "0",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "verify_peer": "0",
+                        "verify_host": "0",
+                        "master_item": []
+                    }
+                ],
+                "discovery_rules": [],
+                "httptests": [],
+                "macros": [
+                    {
+                        "macro": "{$ICMP_LOSS_WARN}",
+                        "value": "20"
+                    },
+                    {
+                        "macro": "{$ICMP_RESPONSE_TIME_WARN}",
+                        "value": "0.15"
+                    }
+                ],
+                "templates": [],
+                "screens": [],
+                "tags": []
+            }
+        ],
+        "triggers": [
+            {
+{% endraw %}
+                "expression": "{{'{'}}{{ zabbix_template_name }}:icmppingloss.min(5m){{'}'}}>{{'{'}}$ICMP_LOSS_WARN{{'}'}} and {{'{'}}{{ zabbix_template_name }}:icmppingloss.min(5m){{'}'}}<100",
+{% raw -%}
+                "recovery_mode": "0",
+                "recovery_expression": "",
+                "name": "{HOST.NAME} high ICMP ping loss",
+                "correlation_mode": "0",
+                "correlation_tag": "",
+                "url": "",
+                "status": "0",
+                "priority": "2",
+                "description": "Last value: {ITEM.LASTVALUE1}.",
+                "type": "0",
+                "manual_close": "0",
+                "dependencies": [
+                    {
+                        "name": "{HOST.NAME} unavailable by ICMP ping",
+{% endraw %}
+                        "expression": "{{'{'}}{{ zabbix_template_name }}:icmpping.max(#3){{'}'}}=0",
+{% raw -%}
+                        "recovery_expression": ""
+                    }
+                ],
+                "tags": []
+            },
+            {
+{% endraw %}
+                "expression": "{{'{'}}{{ zabbix_template_name }}:icmppingsec.avg(5m){{'}'}}>{{'{'}}$ICMP_RESPONSE_TIME_WARN{{'}'}}",
+{% raw -%}
+                "recovery_mode": "0",
+                "recovery_expression": "",
+                "name": "{HOST.NAME} high ICMP ping response time",
+                "correlation_mode": "0",
+                "correlation_tag": "",
+                "url": "",
+                "status": "0",
+                "priority": "2",
+                "description": "Last value: {ITEM.LASTVALUE1}.",
+                "type": "0",
+                "manual_close": "0",
+                "dependencies": [
+                    {
+                        "name": "{HOST.NAME} high ICMP ping loss",
+{% endraw %}
+                        "expression": "{{'{'}}{{ zabbix_template_name }}:icmppingloss.min(5m)}>{{'{'}}$ICMP_LOSS_WARN{{'}'}} and {{'{'}}{{ zabbix_template_name }}:icmppingloss.min(5m){{'}'}}<100",
+{% raw -%}
+                        "recovery_expression": ""
+                    },
+                    {
+                        "name": "{HOST.NAME} unavailable by ICMP ping",
+{% endraw %}
+                        "expression": "{{'{'}}{{ zabbix_template_name }}:icmpping.max(#3){{'}'}}=0",
+{% raw -%}
+                        "recovery_expression": ""
+                    }
+                ],
+                "tags": []
+            },
+            {
+{% endraw %}
+                "expression": "{{'{'}}{{ zabbix_template_name }}:icmpping.max(#3){{'}'}}=0",
+{% raw -%}
+                "recovery_mode": "0",
+                "recovery_expression": "",
+                "name": "{HOST.NAME} unavailable by ICMP ping",
+                "correlation_mode": "0",
+                "correlation_tag": "",
+                "url": "",
+                "status": "0",
+                "priority": "4",
+                "description": "Last value: {ITEM.LASTVALUE1}.\r\nLast three attempts returned timeout.  Please check device connectivity.",
+                "type": "0",
+                "manual_close": "0",
+{% endraw %}
+                "dependencies": {{zabbix_template_trigger_dependencies}},
+{% raw -%}
+                "tags": []
+            }
+        ],
+        "value_maps": [
+            {
+                "name": "Service state",
+                "mappings": [
+                    {
+                        "value": "0",
+                        "newvalue": "Down"
+                    },
+                    {
+                        "value": "1",
+                        "newvalue": "Up"
+                    }
+                ]
+            }
+        ]
+    }
+}
+{% endraw %}
