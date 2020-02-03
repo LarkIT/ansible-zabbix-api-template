@@ -23,7 +23,7 @@ Manipualtes Zabbix templates via the Zabbix API
 - `ansible_connection` should be set to `local` for this role. 
 - When zabbix_template_state set to `dump`, the resulting json file will be dumped in the playbook's working directory
 
-Example create
+## Example create
 
 ```yaml
 - name: Create Zabbix Template 
@@ -40,7 +40,7 @@ Example create
                                               "recovery_expression": ""}]
 ```
 
-Example dump
+## Example dump
 
 ```yaml
 - role: zabbix-api-template
