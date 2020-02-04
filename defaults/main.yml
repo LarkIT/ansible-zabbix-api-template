@@ -5,5 +5,9 @@ zabbix_template_state: present
 zabbix_template_trigger_dependencies: []
 
 # Webapp template specific
-zabbix_template_webapp_port: 443
-zabbix_template_webapp_health_check_path:
+
+default_webapp_port: 443
+default_webapp_path: /
+
+zabbix_template_webapp_port: "{{ default_webapp_port }}"
+zabbix_template_webapp_health_check_path: "{{ default_webapp_path }}
