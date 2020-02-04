@@ -203,7 +203,7 @@
         "dependencies": [],
         "description": "",
 {% endraw %}
-        "expression": "{{'{'}}{{ zabbix_template_name }}:ssl_cert_check.sh[\"expire\",\"{HOST.DNS}\",\"{{ zabbix_template_webapp_port }}\"].last(){{'}'}}<=15 or {{'{'}}{{ zabbix_template_name }}:ssl_cert_check.sh[\"domain\",\"{HOST.DNS}\",\"{{ zabbix_template_webapp_port }}\"].str(null){{'}'}}=1",
+        "expression": "{{'{'}}{{ zabbix_template_name }}:ssl_cert_check.sh[\"expire\",\"{HOST.DNS}\",\"{HOST.PORT}\"].last(){{'}'}}<=15 or {{'{'}}{{ zabbix_template_name }}:ssl_cert_check.sh[\"domain\",\"{HOST.DNS}\",\"{HOST.PORT}\"].str(null){{'}'}}=1",
 {% raw -%}
         "manual_close": "0",
         "name": "SSL Certificate (CN={ITEM.LASTVALUE2}) on {HOST.NAME} expires in 15 days",
@@ -215,7 +215,7 @@
         "type": "0",
         "url": ""
       },
-      {
+      { 
         "correlation_mode": "0",
         "correlation_tag": "",
         "dependencies": [],
