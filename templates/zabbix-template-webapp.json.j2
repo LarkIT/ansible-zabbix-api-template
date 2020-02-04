@@ -55,9 +55,7 @@
                 "retrieve_mode": "0",
                 "status_codes": "",
                 "timeout": "15s",
-{% endraw %}
-                "url": "https://{{'{'}}HOST.DNS{{'}'}}:{{ zabbix_template_webapp_port }}{{ zabbix_template_webapp_health_check_path }}",
-{% raw -%}
+                "url": "{INVENTORY.URL.A}",
                 "variables": []
               }
             ],
@@ -85,9 +83,7 @@
             "inventory_link": "0",
             "ipmi_sensor": "",
             "jmx_endpoint": "",
-{% endraw %}            
-            "key": "ssl_cert_check.sh[\"domain\",\"{{'{'}}HOST.DNS{{'}'}}\",\"{{ zabbix_template_webapp_port }}\"]",
-{% raw -%}
+            "key": "ssl_cert_check.sh[\"domain\",\"{HOST.DNS}\",\"{HOST.PORT}\"]",
             "logtimefmt": "",
             "master_item": [],
             "name": "SSL Certificate Domain Name",
@@ -146,9 +142,7 @@
             "inventory_link": "0",
             "ipmi_sensor": "",
             "jmx_endpoint": "",
-{% endraw %}
-            "key": "ssl_cert_check.sh[\"expire\",\"{{'{'}}HOST.DNS{{'}'}}\",\"{{ zabbix_template_webapp_port }}\"]",
-{% raw -%}
+            "key": "ssl_cert_check.sh[\"expire\",\"{HOST.DNS}\",\"{HOST.PORT}\"]",
             "logtimefmt": "",
             "master_item": [],
             "name": "SSL Certificate Expiration Days",
