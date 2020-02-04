@@ -56,7 +56,7 @@
                 "status_codes": "",
                 "timeout": "15s",
 {% endraw %}
-                "url": "https://{{'{'}}HOST.DNS{{'}'}}:{{ zabbix_template_webapp_port }}",
+                "url": "https://{{'{'}}HOST.DNS{{'}'}}:{{ zabbix_template_webapp_port }}{{ zabbix_template_webapp_health_check_path }}",
 {% raw -%}
                 "variables": []
               }

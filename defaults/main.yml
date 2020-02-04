@@ -3,4 +3,7 @@
 ---
 zabbix_template_state: present
 zabbix_template_trigger_dependencies: []
+
+# Webapp template specific
 zabbix_template_webapp_port: 443
+zabbix_template_webapp_health_check_path:
