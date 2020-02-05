@@ -244,7 +244,7 @@
         "correlation_tag": "",
         "dependencies": [
             {   
-                "name": "{HOST.NAME} unavailable by ICMP ping",
+                "name": "{HOST.NAME} HTTP health check failed",
 {% endraw %}
                 "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.fail[HTTP Health Check].avg(5m){{'}'}}=0",
 {% raw -%}
