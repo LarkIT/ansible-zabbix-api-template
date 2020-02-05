@@ -246,7 +246,7 @@
             {   
                 "name": "{HOST.NAME} HTTP health check failed",
 {% endraw %}
-                "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.fail[HTTP Health Check].avg(5m){{'}'}}=0",
+                "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.fail[HTTP Health Check].avg(5m){{'}'}}=1",
 {% raw -%}
                 "recovery_expression": ""
             }
