@@ -34,7 +34,7 @@
             },
             "attempts": "1",
             "authentication": "0",
-            "delay": "1",
+            "delay": "10m",
             "headers": [],
             "http_password": "",
             "http_proxy": "",
@@ -76,7 +76,7 @@
               }
             ],
             "authtype": "0",
-            "delay": "1m",
+            "delay": "10m",
             "description": "",
             "follow_redirects": "1",
             "headers": [],
@@ -137,7 +137,7 @@
               }
             ],
             "authtype": "0",
-            "delay": "1m",
+            "delay": "10m",
             "description": "",
             "follow_redirects": "1",
             "headers": [],
@@ -227,7 +227,7 @@
         "dependencies": [],
         "description": "",
 {% endraw %}
-        "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.fail[HTTP Health Check].avg(5m){{'}'}}=1",
+        "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.fail[HTTP Health Check].last(){{'}'}}=1",
 {% raw -%}
         "manual_close": "0",
         "name": "{HOST.NAME} HTTP health check failed",
@@ -246,7 +246,7 @@
             {   
                 "name": "{HOST.NAME} HTTP health check failed",
 {% endraw %}
-                "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.fail[HTTP Health Check].avg(5m){{'}'}}=1",
+                "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.fail[HTTP Health Check].last(){{'}'}}=1",
 {% raw -%}
                 "recovery_expression": ""
             }
