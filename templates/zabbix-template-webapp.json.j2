@@ -242,7 +242,15 @@
       {
         "correlation_mode": "0",
         "correlation_tag": "",
-        "dependencies": [],
+        "dependencies": [
+            {   
+                "name": "{HOST.NAME} unavailable by ICMP ping",
+{% endraw %}
+                "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.fail[HTTP Health Check].avg(5m){{'}'}}=0",
+{% raw -%}
+                "recovery_expression": ""
+            }
+        ],
         "description": "",
 {% endraw %}
         "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>200 and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>301 and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>302",
