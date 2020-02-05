@@ -253,7 +253,7 @@
         ],
         "description": "",
 {% endraw %}
-        "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>200 and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>301 and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>302" and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>307",
+        "expression": "{{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>200 and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>301 and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>302 and {{'{'}}{{ zabbix_template_name }}:web.test.rspcode[HTTP Health Check,HTTP Health Check].last(){{'}'}}<>307",
 {% raw -%}
         "manual_close": "0",
         "name": "{HOST.NAME} HTTP response is {ITEM.LASTVALUE}",
