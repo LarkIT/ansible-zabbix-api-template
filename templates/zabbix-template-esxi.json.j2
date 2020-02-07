@@ -97,7 +97,7 @@
         "triggers": [
             {
 {% endraw %}
-                "expression": "{{'{'}}{{ zabbix_template_name }}:check_esxi_hardware.py[\"-H\",\"{HOST.CONN}\",\"-U\",\"nagios\",\"-P\",\"{$ESXI_PASSWORD}\"].regexp(OK){{'}'}}=0",
+                "expression": "{{'{'}}{{ zabbix_template_name }}:check_esxi_hardware.py[\"-H\",\"{HOST.CONN}\",\"-U\",\"{$ESXI_USER}\",\"-P\",\"{$ESXI_PASSWORD}\"].regexp(OK){{'}'}}=0",
 {% raw -%}
                 "recovery_mode": "0",
                 "recovery_expression": "",
