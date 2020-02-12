@@ -3,7 +3,7 @@
     "failed": false,
     "template_json": {
         "zabbix_export": {
-            "date": "2020-02-11T00:39:58Z",
+            "date": "2020-02-12T21:21:12Z",
             "graphs": [
                 {
                     "graph_items": [
