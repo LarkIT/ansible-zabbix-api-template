@@ -22,7 +22,7 @@
     register: template_dump
 
   - debug:
-      var: template_dump
+      var: template_dump | json_query( 'template_dump' )
     
   - name: Write template to file
     copy: content="{{ template_dump|to_nice_json }}" dest=./{{zabbix_template_name}}.json
