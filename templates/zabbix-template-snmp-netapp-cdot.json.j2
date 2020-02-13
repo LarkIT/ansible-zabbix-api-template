@@ -1949,7 +1949,7 @@
                                 "dependencies": [],
                                 "description": "",
 {% endraw %}
-                                "expression": "{{'{'}}{{ zabbix_template_name }}:logicalInterfaceIsHome[{{'{'}}#SNMPINDEX{{'}'}}].last(){{'}'}}">1",
+                                "expression": "{{'{'}}{{ zabbix_template_name }}:logicalInterfaceIsHome[{{'{'}}#SNMPINDEX{{'}'}}].last(){{'}'}}>1",
 {% raw -%}
                                 "manual_close": "0",
                                 "name": "LIF[{#VIF}] on {HOST.NAME} not at home port",
