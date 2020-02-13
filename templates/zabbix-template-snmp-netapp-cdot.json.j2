@@ -23,7 +23,9 @@
                         "name": "VIF"
                     }
                 ],
-                "description": "",
+{% endraw %}
+                "description": "{{ zabbix_template_name }}",
+{% raw -%}
                 "discovery_rules": [
                     {
                         "allow_traps": "0",
