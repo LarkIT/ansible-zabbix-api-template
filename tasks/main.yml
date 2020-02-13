@@ -22,5 +22,5 @@
     register: template_dump
     
   - name: Write template to file
-    copy: content="{{ template_dump|to_json }}" dest=./{{zabbix_template_name}}.json
+    copy: content="{{ template_dump|json_query('zabbix_export')|to_nice_json }}" dest=./{{zabbix_template_name}}.json
   when: zabbix_template_state == "dump"
