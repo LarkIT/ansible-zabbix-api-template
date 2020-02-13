@@ -20,10 +20,7 @@
       template_name: "{{ zabbix_template_name }}"
       state: "{{ zabbix_template_state }}"
     register: template_dump
-
-  - debug:
-      var: template_dump | json_query( 'template_dump' )
     
   - name: Write template to file
-    copy: content="{{ template_dump|to_nice_json }}" dest=./{{zabbix_template_name}}.json
+    copy: content="{{ template_dump.template_json|to_nice_json }}" dest=./{{zabbix_template_name}}.json
   when: zabbix_template_state == "dump"
