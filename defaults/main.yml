@@ -7,3 +7,6 @@ zabbix_template_trigger_dependencies: []
 # Webapp template specific
 zabbix_template_webapp_port: 443
 zabbix_template_webapp_health_check_path: /
+
+# Windows template specific
+zabbix_template_free_disk_space_trigger_priority: "4"
