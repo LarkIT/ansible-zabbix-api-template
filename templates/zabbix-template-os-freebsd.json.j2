@@ -2860,7 +2860,7 @@
                 "dependencies": [],
                 "description": "",
 {% endraw %}
-                "expression": "{{'{'}}{{ zabbix_template name }}:vm.memory.size[available].last(0){{'}'}}<20M",
+                "expression": "{{'{'}}{{ zabbix_template_name }}:vm.memory.size[available].last(0){{'}'}}<20M",
 {% raw -%}
                 "manual_close": "0",
                 "name": "Lack of available memory on server {HOST.NAME}",
