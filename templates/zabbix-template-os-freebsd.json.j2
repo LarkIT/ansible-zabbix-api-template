@@ -1005,7 +1005,7 @@
                                 "dependencies": [],
                                 "description": "",
 {% endraw %}
-                                "expression": "{{'{'}}{{ zabbix_template_name }}:vfs.fs.size[{#FSNAME},pfree].last(0){{'}'}}<10",
+                                "expression": "{{'{'}}{{ zabbix_template_name }}:vfs.fs.size[{{'{'}}#FSNAME{{'}'}},pfree].last(0){{'}'}}<10",
 {% raw -%}
                                 "manual_close": "0",
                                 "name": "Free disk space is less than 10% on volume {#FSNAME} on {HOST.NAME}",
@@ -1023,7 +1023,7 @@
                                 "dependencies": [],
                                 "description": "",
 {% endraw %}
-                                "expression": "{{'{'}}{{ zabbix_template_name }}:vfs.fs.inode[{#FSNAME},pfree].last(0){{'}'}}<10",
+                                "expression": "{{'{'}}{{ zabbix_template_name }}:vfs.fs.inode[{{'{'}}#FSNAME{{'}'}},pfree].last(0){{'}'}}<10",
 {% raw -%}
                                 "manual_close": "0",
                                 "name": "Free inodes is less than 10% on volume {#FSNAME}",
