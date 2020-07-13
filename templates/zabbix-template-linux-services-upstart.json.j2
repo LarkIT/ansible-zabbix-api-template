@@ -131,7 +131,9 @@
                         ],
                         "trigger_prototypes": [
                             {
-                                "expression": "{Template Linux Services Upstart:upstart.service.status[{#SERVICE}].last()}<>0",
+{% endraw %}                                
+                                "expression": "{{'{'}}{{ zabbix_template_name }}:upstart.service.status[{#SERVICE}].last(){{'}'}}<>0",
+{% raw %}
                                 "recovery_mode": "0",
                                 "recovery_expression": "",
                                 "name": "{#SERVICE} service not running",
