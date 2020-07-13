@@ -59,7 +59,7 @@
                                     "macro": "{#SERVICE}",
 {% endraw %}
                                     "value": "{{ zabbix_template_linux_upstart_service_list }}",
-{% raw %}
+{% raw -%}
                                     "operator": "8",
                                     "formulaid": "A"
                                 }
@@ -132,8 +132,8 @@
                         "trigger_prototypes": [
                             {
 {% endraw %}                                
-                                "expression": "{{'{'}}{{ zabbix_template_name }}:upstart.service.status[{#SERVICE}].last(){{'}'}}<>0",
-{% raw %}
+                                "expression": "{{'{'}}{{ zabbix_template_name }}:upstart.service.status[{{'{'}}#SERVICE{{'}'}}].last(){{'}'}}<>0",
+{% raw -%}
                                 "recovery_mode": "0",
                                 "recovery_expression": "",
                                 "name": "{#SERVICE} service not running",
