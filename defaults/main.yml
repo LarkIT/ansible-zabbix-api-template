@@ -10,3 +10,6 @@ zabbix_template_webapp_health_check_path: /
 
 # Windows template specific
 zabbix_template_free_disk_space_trigger_priority: "4"
+
+# Linux upstart service template specific
+zabbix_template_linux_upstart_service_list: "(httpd|jenkins|^ntpd$|postfix|sshd|sql|squid|xinetd)"

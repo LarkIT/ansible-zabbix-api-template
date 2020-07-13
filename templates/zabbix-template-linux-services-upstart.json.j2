@@ -57,7 +57,9 @@
                             "conditions": [
                                 {
                                     "macro": "{#SERVICE}",
-                                    "value": "(httpd|jenkins|^ntpd$|postfix|sshd|sql|squid|xinetd)",
+{% endraw %}
+                                    "value": "{{ zabbix_template_linux_upstart_service_list }}",
+{% raw %}
                                     "operator": "8",
                                     "formulaid": "A"
                                 }
