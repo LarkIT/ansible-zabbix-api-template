@@ -204,7 +204,9 @@
                                 "correlation_tag": "",
                                 "dependencies": [],
                                 "description": "Triggers an alert if a service has restarted",
-                                "expression": "{Template Linux Services Systemd:systemd.service.restart[{#SERVICE}].last()}<>0",
+{% endraw %}
+                                "expression": "{{'{'}}{{ zabbix_template_name }}:systemd.service.restart[{{'{'}}#SERVICE{{'}'}}].last(){{'}'}}<>0",
+{% raw -%}
                                 "manual_close": "1",
                                 "name": "{#SERVICE} service has restarted",
                                 "priority": "2",
@@ -220,7 +222,9 @@
                                 "correlation_tag": "",
                                 "dependencies": [],
                                 "description": "",
-                                "expression": "{Template Linux Services Systemd:systemd.service.status[{#SERVICE}].last()}<>0",
+{% endraw %}
+                                "expression": "{{'{'}}{{ zabbix_template_name }}:systemd.service.status[{{'{'}}#SERVICE{{'}'}}].last()}<>0",
+{% raw -%}
                                 "manual_close": "1",
                                 "name": "{#SERVICE} service not running",
                                 "priority": "4",
