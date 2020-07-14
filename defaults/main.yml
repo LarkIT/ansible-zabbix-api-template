@@ -12,4 +12,7 @@ zabbix_template_webapp_health_check_path: /
 zabbix_template_free_disk_space_trigger_priority: "4"
 
 # Linux upstart service template specific
-zabbix_template_linux_upstart_service_list: "(httpd|jenkins|^ntpd$|postfix|sshd|sql|squid|xinetd)"
+zabbix_template_linux_upstart_service_filter: "(httpd|jenkins|^ntpd$|postfix|sshd|sql|squid|xinetd)"
+
+# Linux systemd service template specific
+zabbix_template_linux_systemd_service_filter: "(fusion|foreman-proxy|gitlab|httpd|mongod|monit|nginx|^ntpd$|openvpnas|postgresql|postfix|pulp|puppet|qpidd|redis|sshd|squid|webhook|xinetd|zabbix-java-gateway)"
