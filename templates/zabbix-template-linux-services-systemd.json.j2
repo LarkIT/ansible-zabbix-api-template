@@ -1,0 +1,264 @@
+{% raw -%}
+{
+    "zabbix_export": {
+        "date": "2020-07-14T17:32:34Z",
+        "groups": [
+            {
+                "name": "Templates/Applications"
+            }
+        ],
+        "templates": [
+            {
+                "applications": [
+                    {
+                        "name": "systemd"
+                    }
+                ],
+{% endraw %}
+                "description": "description": "{{ zabbix_template_name }}",
+{% raw -%}
+                "discovery_rules": [
+                    {
+                        "allow_traps": "0",
+                        "allowed_hosts": "",
+                        "authtype": "0",
+                        "delay": "5m",
+                        "description": "",
+                        "filter": {
+                            "conditions": [
+                                {
+                                    "formulaid": "A",
+                                    "macro": "{#SERVICE}",
+                                    "operator": "8",
+{% endraw %}
+                                    "value": "{{ zabbix_template_linux_systemd_service_filter }}"
+{% raw -%} 
+                               }
+                            ],
+                            "evaltype": "0",
+                            "formula": ""
+                        },
+                        "follow_redirects": "1",
+                        "graph_prototypes": [],
+                        "headers": [],
+                        "host_prototypes": [],
+                        "http_proxy": "",
+                        "ipmi_sensor": "",
+                        "item_prototypes": [
+                            {
+                                "allow_traps": "0",
+                                "allowed_hosts": "",
+                                "application_prototypes": [],
+                                "applications": [
+                                    {
+                                        "name": "systemd"
+                                    }
+                                ],
+                                "authtype": "0",
+                                "delay": "1m",
+                                "description": "",
+                                "follow_redirects": "1",
+                                "headers": [],
+                                "history": "1d",
+                                "http_proxy": "",
+                                "inventory_link": "0",
+                                "ipmi_sensor": "",
+                                "jmx_endpoint": "",
+                                "key": "systemd.service.restart[{#SERVICE}]",
+                                "logtimefmt": "",
+                                "master_item": [],
+                                "name": "{#SERVICE} Restart",
+                                "output_format": "0",
+                                "params": "",
+                                "password": "",
+                                "port": "",
+                                "post_type": "0",
+                                "posts": "",
+                                "preprocessing": [],
+                                "privatekey": "",
+                                "publickey": "",
+                                "query_fields": [],
+                                "request_method": "0",
+                                "retrieve_mode": "0",
+                                "snmp_community": "",
+                                "snmp_oid": "",
+                                "snmpv3_authpassphrase": "",
+                                "snmpv3_authprotocol": "0",
+                                "snmpv3_contextname": "",
+                                "snmpv3_privpassphrase": "",
+                                "snmpv3_privprotocol": "0",
+                                "snmpv3_securitylevel": "0",
+                                "snmpv3_securityname": "",
+                                "ssl_cert_file": "",
+                                "ssl_key_file": "",
+                                "ssl_key_password": "",
+                                "status": "1",
+                                "status_codes": "200",
+                                "timeout": "3s",
+                                "trends": "1d",
+                                "type": "0",
+                                "units": "",
+                                "url": "",
+                                "username": "",
+                                "value_type": "3",
+                                "valuemap": [],
+                                "verify_host": "0",
+                                "verify_peer": "0"
+                            },
+                            {
+                                "allow_traps": "0",
+                                "allowed_hosts": "",
+                                "application_prototypes": [],
+                                "applications": [
+                                    {
+                                        "name": "systemd"
+                                    }
+                                ],
+                                "authtype": "0",
+                                "delay": "1m",
+                                "description": "Returns the status of the",
+                                "follow_redirects": "1",
+                                "headers": [],
+                                "history": "1d",
+                                "http_proxy": "",
+                                "inventory_link": "0",
+                                "ipmi_sensor": "",
+                                "jmx_endpoint": "",
+                                "key": "systemd.service.status[{#SERVICE}]",
+                                "logtimefmt": "",
+                                "master_item": [],
+                                "name": "{#SERVICE} Status",
+                                "output_format": "0",
+                                "params": "",
+                                "password": "",
+                                "port": "",
+                                "post_type": "0",
+                                "posts": "",
+                                "preprocessing": [],
+                                "privatekey": "",
+                                "publickey": "",
+                                "query_fields": [],
+                                "request_method": "0",
+                                "retrieve_mode": "0",
+                                "snmp_community": "",
+                                "snmp_oid": "",
+                                "snmpv3_authpassphrase": "",
+                                "snmpv3_authprotocol": "0",
+                                "snmpv3_contextname": "",
+                                "snmpv3_privpassphrase": "",
+                                "snmpv3_privprotocol": "0",
+                                "snmpv3_securitylevel": "0",
+                                "snmpv3_securityname": "",
+                                "ssl_cert_file": "",
+                                "ssl_key_file": "",
+                                "ssl_key_password": "",
+                                "status": "0",
+                                "status_codes": "200",
+                                "timeout": "3s",
+                                "trends": "1d",
+                                "type": "0",
+                                "units": "",
+                                "url": "",
+                                "username": "",
+                                "value_type": "3",
+                                "valuemap": [],
+                                "verify_host": "0",
+                                "verify_peer": "0"
+                            }
+                        ],
+                        "jmx_endpoint": "",
+                        "key": "systemd.service.discovery",
+                        "lifetime": "1d",
+                        "lld_macro_paths": [],
+                        "master_item": [],
+                        "name": "Service Discovery",
+                        "params": "",
+                        "password": "",
+                        "port": "",
+                        "post_type": "0",
+                        "posts": "",
+                        "preprocessing": [],
+                        "privatekey": "",
+                        "publickey": "",
+                        "query_fields": [],
+                        "request_method": "0",
+                        "retrieve_mode": "0",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_contextname": "",
+                        "snmpv3_privpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_securityname": "",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "status": "0",
+                        "status_codes": "200",
+                        "timeout": "3s",
+                        "trigger_prototypes": [
+                            {
+                                "correlation_mode": "0",
+                                "correlation_tag": "",
+                                "dependencies": [],
+                                "description": "Triggers an alert if a service has restarted",
+                                "expression": "{Template Linux Services Systemd:systemd.service.restart[{#SERVICE}].last()}<>0",
+                                "manual_close": "1",
+                                "name": "{#SERVICE} service has restarted",
+                                "priority": "2",
+                                "recovery_expression": "",
+                                "recovery_mode": "0",
+                                "status": "1",
+                                "tags": [],
+                                "type": "0",
+                                "url": ""
+                            },
+                            {
+                                "correlation_mode": "0",
+                                "correlation_tag": "",
+                                "dependencies": [],
+                                "description": "",
+                                "expression": "{Template Linux Services Systemd:systemd.service.status[{#SERVICE}].last()}<>0",
+                                "manual_close": "1",
+                                "name": "{#SERVICE} service not running",
+                                "priority": "4",
+                                "recovery_expression": "",
+                                "recovery_mode": "0",
+                                "status": "0",
+                                "tags": [],
+                                "type": "0",
+                                "url": ""
+                            }
+                        ],
+                        "type": "0",
+                        "url": "",
+                        "username": "",
+                        "verify_host": "0",
+                        "verify_peer": "0"
+                    }
+                ],
+                "groups": [
+                    {
+                        "name": "Templates/Applications"
+                    }
+                ],
+                "httptests": [],
+                "items": [],
+                "macros": [],
+{% endraw %}
+                "name": "{{ zabbix_template_name }}",
+{% raw -%}
+                "screens": [],
+                "tags": [],
+{% endraw %}
+                "template": "{{ zabbix_template_name }}",
+{% raw -%}
+                "templates": []
+            }
+        ],
+        "version": "4.2"
+    }
+}
+{% endraw %}
