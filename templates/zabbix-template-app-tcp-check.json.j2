@@ -1,0 +1,140 @@
+{% raw -%}
+{
+    "zabbix_export": {
+        "date": "2020-09-24T19:51:01Z",
+        "groups": [
+            {
+                "name": "Templates/Modules"
+            }
+        ],
+        "templates": [
+            {
+                "applications": [],
+{% endraw %}
+                "description": "{{ zabbix_template_name }}",
+{% raw -%}
+                "discovery_rules": [],
+                "groups": [
+                    {
+                        "name": "Templates/Modules"
+                    }
+                ],
+                "httptests": [],
+                "items": [
+                    {
+                        "allow_traps": "0",
+                        "allowed_hosts": "",
+                        "applications": [],
+                        "authtype": "0",
+                        "delay": "1m",
+                        "description": "",
+                        "follow_redirects": "1",
+                        "headers": [],
+                        "history": "1w",
+                        "http_proxy": "",
+                        "inventory_link": "0",
+                        "ipmi_sensor": "",
+                        "jmx_endpoint": "",
+{% endraw %}
+                        "key": "net.tcp.service[tcp,,{{ zabbix_template_tcp_port }}]",
+{% raw -%}
+                        "logtimefmt": "",
+                        "master_item": [],
+{% endraw %}
+                        "name": "TCP port {{ zabbix_template_tcp_port }} check",
+{% raw -%}
+                        "output_format": "0",
+                        "params": "",
+                        "password": "",
+                        "port": "",
+                        "post_type": "0",
+                        "posts": "",
+                        "preprocessing": [],
+                        "privatekey": "",
+                        "publickey": "",
+                        "query_fields": [],
+                        "request_method": "1",
+                        "retrieve_mode": "0",
+                        "snmp_community": "",
+                        "snmp_oid": "",
+                        "snmpv3_authpassphrase": "",
+                        "snmpv3_authprotocol": "0",
+                        "snmpv3_contextname": "",
+                        "snmpv3_privpassphrase": "",
+                        "snmpv3_privprotocol": "0",
+                        "snmpv3_securitylevel": "0",
+                        "snmpv3_securityname": "",
+                        "ssl_cert_file": "",
+                        "ssl_key_file": "",
+                        "ssl_key_password": "",
+                        "status": "0",
+                        "status_codes": "200",
+                        "timeout": "3s",
+                        "trends": "365d",
+                        "type": "3",
+                        "units": "",
+                        "url": "",
+                        "username": "",
+                        "value_type": "3",
+                        "valuemap": {
+                            "name": "Service state"
+                        },
+                        "verify_host": "0",
+                        "verify_peer": "0"
+                    }
+                ],
+                "macros": [],
+{% endraw %}
+                "name": "{{ zabbix_template_name }}",
+{% raw -%}
+                "screens": [],
+                "tags": [],
+{% endraw %}                
+                "template": "{{ zabbix_template_name }}",
+{% raw -%}
+                "templates": []
+            }
+        ],
+        "triggers": [
+            {
+                "correlation_mode": "0",
+                "correlation_tag": "",
+                "dependencies": [],
+                "description": "",
+{% endraw %}
+                "expression": "{{'{'}}{{ zabbix_template_name }}:net.tcp.service[tcp,,{{ zabbix_template_tcp_port }}].max(3m){{'}'}}=0",
+{% raw -%}
+                "manual_close": "0",
+{% endraw %}
+                "name": "TCP check failed on {{'{'}}HOST.NAME{{'}'}}",
+{% raw -%}
+                "priority": "4",
+{% endraw %}
+                "recovery_expression": "{{'{'}}{{ zabbix_template_name }}:net.tcp.service[tcp,,{{ zabbix_template_tcp_port }}].min(5m){{'}'}}=1",
+{% raw -%}
+                "recovery_mode": "1",
+                "status": "0",
+                "tags": [],
+                "type": "0",
+                "url": ""
+            }
+        ],
+        "value_maps": [
+            {
+                "mappings": [
+                    {
+                        "newvalue": "Down",
+                        "value": "0"
+                    },
+                    {
+                        "newvalue": "Up",
+                        "value": "1"
+                    }
+                ],
+                "name": "Service state"
+            }
+        ],
+        "version": "4.2"
+    }
+}
+{% endraw %}
